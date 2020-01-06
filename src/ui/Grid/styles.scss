@@ -1,0 +1,42 @@
+.grid {
+  width: 100%;
+  border: 0 solid;
+
+  &__head {
+    text-align: left;
+    background-color: #666666;
+
+    &_item {
+      padding: 5px;
+      color: #fff;
+      border: 0 solid;
+      min-width: 100px;
+    }
+  }
+  &__row {
+    &_item {
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+  }
+  .is-last {
+    text-align: right;
+  }
+  .sorting {
+    cursor: pointer;
+    background-color: #434343;
+  }
+  .is-active {
+    background-color: #aaaaaa;
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: 20px;
+    color: #000;
+  }
+  .is-asc-sort {
+    background-image: url("../../icons/caret-down.png");
+  }
+  .is-des-sort {
+    background-image: url("../../icons/sort-up.png");
+  }
+}

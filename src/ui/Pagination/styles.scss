@@ -1,0 +1,12 @@
+.pagination {
+  margin: 0 0 10px;
+  display: flex;
+  &__select {
+    margin-right: 50px;
+    min-width: 100px;
+  }
+  &__counter {
+    min-width: 100px;
+    text-align: center;
+  }
+}
