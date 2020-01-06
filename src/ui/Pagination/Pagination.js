@@ -1,14 +1,19 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import {
+    PAGE_SIZES
+} from 'config';
 
 const PaginationComponent = function(props) {
     return (
         <div className="pagination">
             <select className="pagination__select" onChange={props.onItemsPerPage}>
-                <option value={10}>10</option>
-                <option value={20}>20</option>
-                <option value={30}>30</option>
+                {
+                    PAGE_SIZES.map(value => {
+                        return (<option key={value} value={value}>{value}</option>);
+                    })
+                }
             </select>
             <button disabled={props.prevDisabled} onClick={props.onPrev}>Prev</button>
             <div className="pagination__counter">{props.currentPageNumber}/{props.pagesCount}</div>

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {
     SORT_TYPE,
     CHART_TYPES,
-    CHART_SIZES,
+    PAGE_SIZES,
     PAGINATION_TYPE,
 } from 'config';
 
@@ -38,7 +38,7 @@ class AppContainer extends React.Component {
         this.inputRef = React.createRef();
         this.state = {
             chartType: CHART_TYPES.DONUT,
-            chartSize: CHART_SIZES[0],
+            chartSize: PAGE_SIZES[0],
             pageNumber: 0,
         };
     }
@@ -90,7 +90,7 @@ class AppContainer extends React.Component {
                 />) : <EmptyComponent />}
                 <ChartComponent
                     pagesCount={chartConfig.pagesCount || 0}
-                    currentPageNumber={pageNumber}
+                    currentPageNumber={pageNumber + 1}
                     prevDisabled={pageNumber === 0}
                     nextDisabled={pageNumber + 1 >= chartConfig.pagesCount}
                     onPrev={this.onChangeChartPage.bind(this, PAGINATION_TYPE.PREV)}

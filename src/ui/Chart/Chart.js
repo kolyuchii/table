@@ -3,7 +3,7 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 import {
     CHART_TYPES,
-    CHART_SIZES,
+    PAGE_SIZES,
 } from 'config';
 
 const ChartComponent = function (props) {
@@ -18,7 +18,7 @@ const ChartComponent = function (props) {
             </select>
             <select onChange={props.onChangePeriod}>
                 {
-                    CHART_SIZES.map(value => {
+                    PAGE_SIZES.map(value => {
                         return (<option key={value} value={value}>{value}</option>);
                     })
                 }

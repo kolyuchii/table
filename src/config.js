@@ -8,7 +8,7 @@ export const CHART_TYPES = {
     DONUT: 'donut',
     BAR: 'bar',
 };
-export const CHART_SIZES = [
+export const PAGE_SIZES = [
     10,
     50,
     100,
