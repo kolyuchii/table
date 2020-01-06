@@ -28,7 +28,7 @@ export function fetchUsers() {
             })
             .then(users => {
                 // store the data
-                dispatch(setData(users));
+                dispatch(setData(users.slice(0)));
                 dispatch(setUsers(users));
                 const state = getState();
 

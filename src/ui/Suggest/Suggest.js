@@ -6,6 +6,7 @@ const SuggestComponent = function (props) {
     return (
         <div className="suggest">
             <div className="suggest__controls">
+                <b>Filter: </b>
                 <input ref={props.inputRef} type="text" onChange={props.onSuggest} />
                 <button onClick={props.onSearch}>Find</button>
 

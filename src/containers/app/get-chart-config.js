@@ -18,7 +18,8 @@ export default function (data, chartType, chartSize, pageNumber = 0) {
     // Our field: "date_of_birth":"01/09/1960"
     const obj = {};
     const start = pageNumber * chartSize;
-    data.slice(start, start + chartSize).forEach(user => {
+    const users = data.slice(start, start + chartSize);
+    users.forEach(user => {
         if (user.date_of_birth) {
             const year = user.date_of_birth.split('/')[2];
             if (obj[year]) {

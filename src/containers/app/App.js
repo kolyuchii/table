@@ -132,6 +132,7 @@ class AppContainer extends React.Component {
     }
 
     resetFilters() {
+        this.inputRef.current.value = '';
         this.props.actions.reset();
     }
 

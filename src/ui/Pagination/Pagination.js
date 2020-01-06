@@ -8,6 +8,7 @@ import {
 const PaginationComponent = function(props) {
     return (
         <div className="pagination">
+            <b>Items per page: </b>
             <select className="pagination__select" onChange={props.onItemsPerPage}>
                 {
                     PAGE_SIZES.map(value => {

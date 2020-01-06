@@ -9,14 +9,16 @@ import {
 const ChartComponent = function (props) {
     return (
         <div className="chart">
-            <select onChange={props.onChange}>
+            <b>Chart type: </b>
+            <select className="chart__select" onChange={props.onChange}>
                 {
                     Object.values(CHART_TYPES).map(value => {
                         return (<option key={value} value={value}>{value}</option>);
                     })
                 }
             </select>
-            <select onChange={props.onChangePeriod}>
+            <b>Items per page: </b>
+            <select className="chart__select" onChange={props.onChangePeriod}>
                 {
                     PAGE_SIZES.map(value => {
                         return (<option key={value} value={value}>{value}</option>);

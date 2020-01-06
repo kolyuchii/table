@@ -28,22 +28,33 @@ const GridComponent = function (props) {
         "is-asc-sort": props.currentTab === 'salary' && props.sortType === SORT_TYPE.ASC,
         "is-des-sort": props.currentTab === 'salary' && props.sortType === SORT_TYPE.DES,
     });
-    return <table className="grid" cellSpacing="0" cellPadding="0">
-        <thead>
-            <tr className="grid__head">
-                <th className="grid__head_item">First Name</th>
-                <th className="grid__head_item">Last Name</th>
-                <th className="grid__head_item">Email</th>
-                <th className={dob} onClick={props.onClick.bind(this, 'dob')}>DOB</th>
-                <th className={industry} onClick={props.onClick.bind(this, 'industry')}>Industry</th>
-                <th className={salary} onClick={props.onClick.bind(this, 'salary')}>Salary</th>
-                <th className="grid__head_item is-last">Experience</th>
-            </tr>
-        </thead>
-        <tbody>
-            {getRows(props.users)}
-        </tbody>
-    </table>;
+    return (
+        <table className="grid" cellSpacing="0" cellPadding="0">
+            <colgroup>
+                <col width="10%" />
+                <col width="15%" />
+                <col width="25%" />
+                <col width="10%" />
+                <col width="25%" />
+                <col width="10%" />
+                <col width="10%" />
+            </colgroup>
+            <thead>
+                <tr className="grid__head">
+                    <th className="grid__head_item">First Name</th>
+                    <th className="grid__head_item">Last Name</th>
+                    <th className="grid__head_item">Email</th>
+                    <th className={dob} onClick={props.onClick.bind(this, 'dob')}>DOB</th>
+                    <th className={industry} onClick={props.onClick.bind(this, 'industry')}>Industry</th>
+                    <th className={salary} onClick={props.onClick.bind(this, 'salary')}>Salary</th>
+                    <th className="grid__head_item is-last">Experience</th>
+                </tr>
+            </thead>
+            <tbody>
+                {getRows(props.users)}
+            </tbody>
+        </table>
+    );
 };
 
 function getRows(users) {
